@@ -61,6 +61,9 @@ GoogleMap = {
 		this.zoom(10);
 		this.loadTweet();
 	},
+	togglePlay: function() {
+		GoogleMap.playing ? GoogleMap.stop() : GoogleMap.play();
+	},
 	stop: function() {
 		this.playing = false;
 		window.clearTimeout(GoogleMap.loadTweet);

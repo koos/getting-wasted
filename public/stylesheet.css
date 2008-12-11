@@ -76,3 +76,7 @@ img { border: none; }
 	text-align: center;
 	margin-top: 10px;
 }
+
+#play {
+	text-align:right;
+}
