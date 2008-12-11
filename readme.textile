@@ -4,7 +4,7 @@ This is a small application, showing a google map with places where you can get 
 
 if you want to suggest a place where people can get wasted, just send a twittermessage with the following syntax: "@gettingwasted L: cologne, vogelsangerstr. 1".
 
-if you want to show this application in action visit http://.....
+if you want to show this application in action visit http://gettingwastedapp.com/
 
 feel free to make something crazy with this small application.
 
