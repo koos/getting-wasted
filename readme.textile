@@ -1,6 +1,6 @@
 h1. Getting wasted app 
 
-* The source of http://gettingwastedapp.com*
+*The source of http://gettingwastedapp.com*
 
 This is a small application, showing a google map with places where you can get "wasted"* . :D 
 
@@ -13,7 +13,9 @@ h2. Source
 It's a Sinatra app that uses ActiveRecord to store the tweets
 
 *environment.rb* contains the global setup
+
 *importer.rb* imports the replies from twitter - We're currently running this in a cron job.
+
 *drunkhere.rb* the actual Sinatra app.
 
 
