@@ -19,7 +19,7 @@ It's a Sinatra app that uses ActiveRecord to store the tweets
 *drunkhere.rb* the actual Sinatra app.
 
 
-* As in having party ;)
+*As in having party ;)
 
 
 Copyright (c) 2008 Railslove
