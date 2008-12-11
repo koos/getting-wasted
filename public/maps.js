@@ -19,9 +19,18 @@ GoogleMap = {
 		this.zoom = level;
 	},
 	createMarkerForTweet: function(tweet) {
-		var icon = this.options.icon || "http://www.google.com/intl/en_us/mapfiles/ms/micons/blue-dot.png";
+		var icon; 
+		icon = new GIcon(); 
+		icon.image = "/drinks.png"; 
+		icon.shadow = "/shadow.png"; 
+		icon.iconSize = new GSize(21, 31); 
+		icon.shadowSize = new GSize(52, 29); 
+		icon.iconAnchor = new GPoint(9, 33); 
+		icon.infoWindowAnchor = new GPoint(20, 1);
+		
+		// var icon = this.options.icon || "http://www.google.com/intl/en_us/mapfiles/ms/micons/blue-dot.png";
 		var posn = new GLatLng(tweet.latitude,tweet.longitude);
-		var marker =  new GMarker(posn,{title:tweet.overlay_body});
+		var marker =  new GMarker(posn,{title:tweet.overlay_body, icon:icon, clickable:true});
 		this.map.addOverlay(marker); 
 		GEvent.addListener(marker, 'click', function() { marker.openInfoWindowHtml(tweet.overlay_body)  } );
 		return marker;

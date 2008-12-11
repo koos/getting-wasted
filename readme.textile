@@ -1,6 +1,10 @@
 h1. Getting wasted app
 
-This is a small application, showing a google map with places where you can get wasted. the places are updated once an hour and only for one day.
+This is a small application, showing a google map with places where you can get wasted. the places are updated once an hour via twitter and visible only for 24 hours.
+
+if you want to suggest a place where people can get wasted, just send a twittermessage with the following syntax: "@gettingwasted L: cologne, vogelsangerstr. 1".
+
+if you want to show this application in action visit http://.....
 
 feel free to make something crazy with this small application.
 
