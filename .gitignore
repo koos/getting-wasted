@@ -4,3 +4,4 @@ config/database.yml
 log/*
 pid/*
 *.sqlite3
+.DS_Store
