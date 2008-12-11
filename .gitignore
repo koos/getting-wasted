@@ -1,0 +1,6 @@
+public/index.*
+config/deploy.rb
+config/database.yml
+log/*
+pid/*
+*.sqlite3

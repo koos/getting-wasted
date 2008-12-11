@@ -1,0 +1,14 @@
+---
+    environment: production
+    chdir: /u/apps/times/current
+    address: 127.0.0.1
+    user: mongrel
+    group: mongrel
+    port: 7000
+    pid: pids/thin.pid
+    rackup: config.ru
+    log: log/thin.log
+    max_conns: 1024
+    timeout: 30
+    max_persistent_conns: 512
+    daemonize: true

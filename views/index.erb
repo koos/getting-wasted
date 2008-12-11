@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/ DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Where am i getting wasted today?</title>
+	<link href="/stylesheet.css" media="all" rel="Stylesheet" type="text/css" />
+	<script src='http://maps.google.com/maps?file=api&amp;v=2&amp;key=<%= GOOGLE_API_KEY %>' type='text/javascript'></script>
+	<script src="/maps.js"></script>
+	<script src="/prototype.js"></script>
+	<script type="text/javascript">
+  	$(document).observe("dom:loaded",function(){
+			if(GBrowserIsCompatible()) {
+				GoogleMap.initialize();
+				window.setTimeout(function(){GoogleMap.addTweetMarkers(<%= @tweets.to_json %>)},0);
+			}
+		})
+		$(document).observe("unload", function(){
+			GUnload();
+		});
+	</script>
+</head>
+
+<body>
+	<div id="wrapper">
+		<div id="header">
+			<h1 class="logo"><img src="partyicon.png" width="106" height="120" alt="Partyicon"></h1><span id="text">Where am I getting wasted today?</span>
+	  </div>
+	  
+	  <div id="map" style="position: relative; height: 400px; width:100%;"></div>
+	  
+	  <div id="near">Near you? Hier ein Formular hin womit dann eine Distanz von einem Bestimmtem Ort angegeben werden kann.</div>
+		<div id="footer">
+			Brought to you by <a href="http://railslove.com">Railslove</a> and build with <a href="#">Sinatra</a>
+		</div>
+	</div>
+</body>
+</html>
