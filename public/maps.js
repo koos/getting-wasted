@@ -26,8 +26,8 @@ GoogleMap = {
 		var icon = new GIcon();
 		icon.image = "/drinks.png";
 		icon.shadow = "/shadow.png";
-		icon.iconSize = new GSize(21, 31);
-		icon.shadowSize = new GSize(52, 29);
+		icon.iconSize = new GSize(26, 31);
+		icon.shadowSize = new GSize(50, 27);
 		icon.iconAnchor = new GPoint(9, 33);
 		icon.infoWindowAnchor = new GPoint(20, 1);
 		        
