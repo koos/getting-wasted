@@ -19,7 +19,7 @@ GoogleMap = {
 		this.map.setCenter(latlong, (zoom || this.zoom));
 	},
 	zoom: function(level) {
-		this.zoom = level;
+		this.zoomLevel = level;
 		this.map.setZoom(level);
 	},
 	createMarkerForTweet: function(tweet) {
@@ -52,21 +52,22 @@ GoogleMap = {
 				var tweet = transport.responseText.evalJSON();
 				var marker = GoogleMap.createMarkerForTweet(tweet);
 				marker.openInfoWindowHtml(tweet.overlay_body);
-				window.setTimeout(GoogleMap.loadTweet,2000);
+				GoogleMap.playingTimeout = window.setTimeout(GoogleMap.loadTweet,2000);
 			}, 
 			parameters: {current_tweet: null}});	
 	},
 	play: function() {
-		this.playing = true
-		this.zoom(10);
-		this.loadTweet();
+		GoogleMap.playing = true;
+		GoogleMap.zoom(10);
+		GoogleMap.loadTweet();
 	},
 	togglePlay: function() {
 		GoogleMap.playing ? GoogleMap.stop() : GoogleMap.play();
 	},
 	stop: function() {
-		this.playing = false;
-		window.clearTimeout(GoogleMap.loadTweet);
+		GoogleMap.playing = false;
+		if(GoogleMap.playingTimeout)
+			window.clearTimeout(GoogleMap.playingTimeout);
 	},
 	removeAllMarkers: function() {
 		this.map.closeInfoWindow();

@@ -24,8 +24,9 @@ class Migrate < ActiveRecord::Migration
   end
 end
 
-# This is only a "localhost"-Apikey
-GOOGLE_API_KEY = "2ABQIAAAAnfs7bKE82qgb3Zc2YyS-oBT2yXp_ZAY8_ufC3CFXhHIE1NvwkxSySz_REpPq-4WZA27OwgbtyR3VcA"
+# This is only a "localhost"-Apikey: 
+#GOOGLE_API_KEY = "2ABQIAAAAnfs7bKE82qgb3Zc2YyS-oBT2yXp_ZAY8_ufC3CFXhHIE1NvwkxSySz_REpPq-4WZA27OwgbtyR3VcA"
+GOOGLE_API_KEY = "ABQIAAAA3hTMxebvnbMvuQzYVBzbKhSjSB4hbSIVmu7QqeR02zD68C5aUhSY0ElTBXNgn76EPHFLxoncuZZ4OQ"
 GEOCODER = Graticule.service(:google).new(GOOGLE_API_KEY)
 
 class Tweet < ActiveRecord::Base
