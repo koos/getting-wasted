@@ -8,5 +8,5 @@ Sinatra::Application.default_options.merge!(
   :env => :production
 )
  
-require 'times'
+require 'drunkhere'
 run Sinatra.application
