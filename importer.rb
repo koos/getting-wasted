@@ -4,7 +4,7 @@ require "twitter"
 
 Twitter::Base.new('PUTYOURTWITTERBOTNAMEHERE', 'PUTYOURTWITTERBOTPASSWORDHERE').replies.each do |tweet|
   puts "importing #{tweet.id}"
-  Tweet.create!(:body => tweet.text, :twitter_id => tweet.id, :user => tweet.user.name) rescue "error importing"
+  Tweet.create!(:body => tweet.text, :twitter_id => tweet.id, :user => tweet.user.name, :screenname => tweet.user.screenname) rescue "error importing"
   puts "done #{tweet.id}"
 end
 
