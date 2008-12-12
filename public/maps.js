@@ -12,7 +12,7 @@ GoogleMap = {
 		this.map.enableDoubleClickZoom();
 		this.map.enableScrollWheelZoom();
 		this.map.enableGoogleBar();
-		this.center(new GLatLng((this.options.latitude || 50.9455811), (this.options.longitude || 6.9207192)), (this.options.zoom || 3));
+		this.center(new GLatLng((this.options.latitude || 50.9455811), (this.options.longitude || 6.9207192)), (this.options.zoom || 13));
 	}, 
 	center: function(latlong,zoom) {
 		this.map.checkResize();
@@ -50,9 +50,10 @@ GoogleMap = {
 				if(!GoogleMap.playing) { return }
 				GoogleMap.removeAllMarkers();
 				var tweet = transport.responseText.evalJSON();
+				if(!tweet) { return }
 				var marker = GoogleMap.createMarkerForTweet(tweet);
 				marker.openInfoWindowHtml(tweet.overlay_body);
-				GoogleMap.playingTimeout = window.setTimeout(GoogleMap.loadTweet,2000);
+				GoogleMap.playingTimeout = window.setTimeout(GoogleMap.loadTweet,4000);
 			}, 
 			parameters: {current_tweet: null}});	
 	},
