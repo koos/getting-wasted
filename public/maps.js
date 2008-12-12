@@ -48,18 +48,18 @@ GoogleMap = {
 		new Ajax.Request('/random', { method:'get', 
 			onSuccess : function(transport) {
 				if(!GoogleMap.playing) { return }
-				GoogleMap.removeAllMarkers();
+				//GoogleMap.removeAllMarkers();
 				var tweet = transport.responseText.evalJSON();
 				if(!tweet) { return }
 				var marker = GoogleMap.createMarkerForTweet(tweet);
 				marker.openInfoWindowHtml(tweet.overlay_body);
-				GoogleMap.playingTimeout = window.setTimeout(GoogleMap.loadTweet,4000);
+				GoogleMap.playingTimeout = window.setTimeout(GoogleMap.loadTweet,3500);
 			}, 
 			parameters: {current_tweet: null}});	
 	},
 	play: function() {
 		GoogleMap.playing = true;
-		GoogleMap.zoom(10);
+		GoogleMap.zoom(9);
 		GoogleMap.loadTweet();
 	},
 	togglePlay: function() {
