@@ -1,9 +1,7 @@
 require "rubygems"
 require "graticule"
-# the hpricot truncate method uses this
 require "active_support"
 require "active_record"
-$LOAD_PATH.unshift(File.dirname(__FILE__) + '/vendor/sinatra/lib')
 
 db_config = YAML.load_file('config/database.yml')
 ActiveRecord::Base.establish_connection(db_config["production"])

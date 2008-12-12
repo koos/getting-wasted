@@ -1,12 +1,12 @@
 ---
     environment: production
-    chdir: /u/apps/times/current
+    chdir: /u/apps/gettingwasted/current
     address: 127.0.0.1
     user: mongrel
     group: mongrel
-    port: 7000
+    port: 8500
     pid: pids/thin.pid
-    rackup: config.ru
+    rackup: config/config.ru
     log: log/thin.log
     max_conns: 1024
     timeout: 30

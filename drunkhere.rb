@@ -1,4 +1,5 @@
 require "environment"
+$LOAD_PATH.unshift(File.dirname(__FILE__) + '/vendor/sinatra/lib')
 require 'sinatra'
 
 get '/' do
