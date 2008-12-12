@@ -1,5 +1,5 @@
 require 'rubygems'
-$LOAD_PATH.unshift(File.dirname(__FILE__) + '../vendor/sinatra/lib')
+$LOAD_PATH.unshift('/u/apps/gettingwasted/current/vendor/sinatra/lib')
 require 'sinatra'
 
   
