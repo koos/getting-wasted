@@ -43,7 +43,7 @@ class Tweet < ActiveRecord::Base
       self.latitude = location.latitude
       self.longitude = location.longitude
       # remove the L: ... part?
-      self.overlay_body = "<a href=\"http://twitter.com/#{self.user}\">#{self.user}</a>: #{self.body.gsub(/l:(.*)$/i,"").gsub(/^@rememberthebeer/,"")}"
+      self.overlay_body = "<a href=\"http://twitter.com/#{self.user}\">#{self.user}</a>: #{self.body.gsub(/l:(.*)$/i,"").gsub(/^@gettingwasted/,"")}"
     end
   rescue
     puts "Error extracting geo informations"
