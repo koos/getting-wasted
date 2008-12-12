@@ -18,22 +18,98 @@
 			GUnload();
 		});
 	</script>
+  
+	<style type="text/css" media="screen">
+    * {
+      margin:0;
+      padding:0;
+    }
+    
+    div#h1 {
+      position:absolute;
+      z-index:100;
+      top:5em;
+      left:18em;
+      background-color:#fff;
+    }
+    
+    h1 {
+      font-family:Georgia, serif;
+      color:#000;
+      font-size:4em;
+      padding:0.1em 0.2em;
+    }
+    
+    img#partyicon {
+      position:absolute;
+      z-index:100;
+      top:5em;
+      left:7em;
+      background-color:#fff;
+      padding:10px;
+    }
+    
+    a img {
+      border:none;
+    }
+    
+    div#play {
+      position:absolute;
+	    z-index:100;
+	    left:18em;
+	    top:11em;
+	    background-color:#fff;
+	    padding:0.5em 0.5em;
+	    font-family:helvetica;
+	    text-transform:uppercase;
+    }
+    
+    div#play a {
+      color:red;
+      font-size:1.2em;
+      font-weight:bold;
+      text-decoration:none;
+      border-bottom:2px solid red;
+    }
+	
+	  div#map {
+	    position:absolute;
+	    z-index:0;
+	    top:0px;
+	    left:0px;
+	    width:100%;
+	    height:100%;
+	  }
+	  
+	  p#footer {
+	    position:absolute;
+	    z-index:100;
+	    left:18em;
+	    bottom:3em;
+	    font-family:Georgia, serif;
+      font-size:1.4em;
+      background-color:#fff;
+      color:#000;
+      padding:0.2em 0.3em;
+	  }
+	  
+	  p#footer a {
+	    color:red;
+	  }
+	  
+	</style>
 </head>
 
 <body>
-	<div id="wrapper">
-		<div id="header">
-			<h1 class="logo"><img src="partyicon.png" width="106" height="120" alt="Partyicon"></h1><span id="text">Where am I getting wasted today?</span>
-	  </div>
-	  
-	  <div id="map" style="position: relative; height: 400px; width:100%;"></div>
-	  
-		<div id="play"><a href="#map" onclick="GoogleMap.togglePlay()">play/stop</a></div>
-	  <div id="near"></div>
-		<div id="footer">
-			Another <a href="http://icreatedsomethingcool.com/">wasted time project</a> by <a href="http://twitter.com/mpo"><img src="http://s3.amazonaws.com/twitter_production/profile_images/54943469/ole-mpo_bigger.jpg" alt="MPO" height="15"/></a> and <a href="http://railslove.com"><img src="http://s3.amazonaws.com/twitter_production/profile_images/51980438/railslove_buddy.png" alt="Railslove" height="15"/></a> Built with the incredible <a href="http://sinatra.rubyforge.org/"><img src="http://sinatra.rubyforge.org/sinatra-logo.gif" alt="Sinatra" height="15"/></a><br />
-		</div>
-	</div>
+	  <div id="h1"><h1>Where am I getting wasted* today?</h1></div>
+	  <img id="partyicon" src="partyicon.png" width="106" height="120" alt="Getting Wasted" />
+	  <div id="map"></div>
+	  <div id="play"><a href="#map" onclick="GoogleMap.togglePlay()">play/pause</a></div>
+	  <p id="footer">
+	    * as in having-fun. <strong>getting wasted</strong>, another <a href="http://icreatedsomethingcool.com/">wasted time project</a> by <a href="http://twitter.com/mpo"><img src="http://s3.amazonaws.com/twitter_production/profile_images/54943469/ole-mpo_bigger.jpg" alt="MPO" height="15"/></a> and <a href="http://railslove.com"><img src="http://s3.amazonaws.com/twitter_production/profile_images/51980438/railslove_buddy.png" alt="Railslove" height="15"/></a>, built with the incredible <a href="http://sinatra.rubyforge.org/"><img src="http://sinatra.rubyforge.org/sinatra-logo.gif" alt="Sinatra" height="15"/></a>.
+      <br />
+	  </p>
+  
 	<script type="text/javascript">
   var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
   document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
