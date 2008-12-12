@@ -11,8 +11,7 @@
   	$(document).observe("dom:loaded",function(){
 			if(GBrowserIsCompatible()) {
 				GoogleMap.initialize();
-				GoogleMap.play();
-				//window.setTimeout(function(){GoogleMap.addTweetMarkers(<%= @tweets.to_json %>)},0);
+				window.setTimeout(function(){GoogleMap.addTweetMarkers(<%= @tweets.to_json %>)},0);
 			}
 		})
 		$(document).observe("unload", function(){
@@ -29,8 +28,8 @@
     div#h1 {
       position:absolute;
       z-index:100;
-      top:5em;
-      left:18em;
+      top:40px;
+      left:210px;
       background-color:#fff;
     }
     
@@ -44,8 +43,8 @@
     img#partyicon {
       position:absolute;
       z-index:100;
-      top:5em;
-      left:7em;
+      top:40px;
+      left:80px;
       background-color:#fff;
       padding:10px;
     }
@@ -57,8 +56,8 @@
     div#play {
       position:absolute;
 	    z-index:100;
-	    left:18em;
-	    top:11em;
+	    left:210px;
+	    top:110px;
 	    background-color:#fff;
 	    padding:0.5em 0.5em;
 	    font-family:helvetica;
@@ -85,8 +84,8 @@
 	  p#footer {
 	    position:absolute;
 	    z-index:100;
-	    left:18em;
-	    bottom:3em;
+	    left:210px;
+	    bottom:40px;
 	    font-family:Georgia, serif;
       font-size:1.4em;
       background-color:#fff;
@@ -108,6 +107,7 @@
 	  <div id="play"><a href="#map" onclick="GoogleMap.togglePlay()">play/pause</a></div>
 	  <p id="footer">
 	    * as in having-fun. <strong>getting wasted</strong>, another <a href="http://icreatedsomethingcool.com/">wasted time project</a> by <a href="http://twitter.com/mpo"><img src="http://s3.amazonaws.com/twitter_production/profile_images/54943469/ole-mpo_bigger.jpg" alt="MPO" height="15"/></a> and <a href="http://railslove.com"><img src="http://s3.amazonaws.com/twitter_production/profile_images/51980438/railslove_buddy.png" alt="Railslove" height="15"/></a>, built with the incredible <a href="http://sinatra.rubyforge.org/"><img src="http://sinatra.rubyforge.org/sinatra-logo.gif" alt="Sinatra" height="15"/></a>.
+      <br />
 	  </p>
   
 	<script type="text/javascript">
