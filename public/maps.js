@@ -59,7 +59,7 @@ GoogleMap = {
 	},
 	play: function() {
 		GoogleMap.playing = true;
-		GoogleMap.zoom(9);
+		GoogleMap.zoom(6);
 		GoogleMap.loadTweet();
 	},
 	togglePlay: function() {

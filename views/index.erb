@@ -10,8 +10,8 @@
 	<script type="text/javascript">
   	$(document).observe("dom:loaded",function(){
 			if(GBrowserIsCompatible()) {
-				GoogleMap.initialize({zoom:8});
-				window.setTimeout(function(){GoogleMap.addTweetMarkers(<%= @tweets.to_json %>)},0);
+				GoogleMap.initialize({zoom:6});
+				GoogleMap.play();
 			}
 		})
 		$(document).observe("unload", function(){
