@@ -11,7 +11,8 @@
   	$(document).observe("dom:loaded",function(){
 			if(GBrowserIsCompatible()) {
 				GoogleMap.initialize();
-				window.setTimeout(function(){GoogleMap.addTweetMarkers(<%= @tweets.to_json %>)},0);
+				GoogleMap.play();
+				//window.setTimeout(function(){GoogleMap.addTweetMarkers(<%= @tweets.to_json %>)},0);
 			}
 		})
 		$(document).observe("unload", function(){
