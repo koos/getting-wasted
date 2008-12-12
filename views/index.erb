@@ -10,7 +10,7 @@
 	<script type="text/javascript">
   	$(document).observe("dom:loaded",function(){
 			if(GBrowserIsCompatible()) {
-				GoogleMap.initialize();
+				GoogleMap.initialize({zoom:8});
 				window.setTimeout(function(){GoogleMap.addTweetMarkers(<%= @tweets.to_json %>)},0);
 			}
 		})
