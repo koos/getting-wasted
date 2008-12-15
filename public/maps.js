@@ -69,6 +69,8 @@ GoogleMap = {
 		GoogleMap.playing = false;
 		if(GoogleMap.playingTimeout)
 			window.clearTimeout(GoogleMap.playingTimeout);
+		if(GoogleMap.allTweets)
+			GoogleMap.addTweetMarkers(GoogleMap.allTweets);
 	},
 	removeAllMarkers: function() {
 		this.map.closeInfoWindow();

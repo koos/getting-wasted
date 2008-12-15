@@ -11,7 +11,7 @@
   	$(document).observe("dom:loaded",function(){
 			if(GBrowserIsCompatible()) {
 				GoogleMap.initialize({zoom:6});
-				window.setTimeout(function(){GoogleMap.addTweetMarkers(<%= @tweets.to_json %>)},0);
+				GoogleMap.allTweets = <%= @tweets.to_json %>;
         GoogleMap.play();
 			}
 		})
@@ -133,7 +133,7 @@
     <div id="h1"><h1>Where am I getting wasted* today?</h1></div>
 	  <p id="howto"><span>just <a href="http://twitter.com/">twitter</a> something like <strong>@gettingwasted My Party L:254 W 54th St, New York</strong> to show your event on the map.</span></p>
 	  <div id="map"></div>
-	  <div id="play"><a href="#map" onclick="GoogleMap.togglePlay()">play / pause</a></div>
+	  <div id="play"><a href="#map" onclick="GoogleMap.togglePlay()">play / all</a></div>
 	  <p id="footer">
 	    <span>* as in having fun. <strong>getting wasted</strong>, another <a href="http://icreatedsomethingcool.com/">wasted time project</a> by <a href="http://twitter.com/mpo"><img src="http://s3.amazonaws.com/twitter_production/profile_images/54943469/ole-mpo_bigger.jpg" alt="MPO" height="15"/></a> and <a href="http://railslove.com"><img src="http://s3.amazonaws.com/twitter_production/profile_images/51980438/railslove_buddy.png" alt="Railslove" height="15"/></a>, built with the incredible <a href="http://sinatra.rubyforge.org/"><img src="http://sinatra.rubyforge.org/sinatra-logo.gif" alt="Sinatra" height="15"/></a>.</span>
       <br />
