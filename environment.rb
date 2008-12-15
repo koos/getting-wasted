@@ -10,6 +10,7 @@ class Migrate < ActiveRecord::Migration
   def self.up
     create_table :tweets do |t|
       t.string :user, :body, :overlay_body
+      t.string :screenname, :body, :overlay_body
       t.integer :twitter_id
       t.column "latitude", :decimal, :precision => 15, :scale => 12
       t.column "longitude", :decimal, :precision => 15, :scale => 12
@@ -43,7 +44,7 @@ class Tweet < ActiveRecord::Base
       self.latitude = location.latitude
       self.longitude = location.longitude
       # remove the L: ... part?
-      self.overlay_body = "<a href=\"http://twitter.com/#{self.user}\">#{self.user}</a>: #{self.body.gsub(/l:(.*)$/i,"").gsub(/^@gettingwasted/,"")}"
+      self.overlay_body = "<a href=\"http://twitter.com/#{self.screenname}\">#{self.user}</a>: #{self.body.gsub(/l:(.*)$/i,"").gsub(/^@gettingwasted/,"")}"
     end
   rescue
     puts "Error extracting geo informations"
