@@ -3,11 +3,11 @@ $LOAD_PATH.unshift(File.dirname(__FILE__) + '/vendor/sinatra/lib')
 require 'sinatra'
 
 get '/' do
-  @tweets = Tweet.find(:all, :conditions => {:created_at => 1.day.ago..Time.now})
+  @tweets = Tweet.find(:all)
   erb :index
 end
 
 get '/random' do 
-  @tweet = Tweet.find(:first, :conditions => {:created_at => 1.day.ago..Time.now}, :order => "rand()")
+  @tweet = Tweet.find(:first, :order => "rand()")
   @tweet.to_json
 end
